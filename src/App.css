@@ -1,24 +1,3 @@
-.bio-card {
-  width: 100%;
-  max-width: 420px;
-  margin: auto;
-  padding: 30px;
-  box-sizing: border-box;
-  background: white;
-  border: 1px solid #d8e1ea;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(45, 75, 105, 0.12);
-  text-align: center;
-}
-
-.profile-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border: 4px solid #e5eef5;
-  border-radius: 50%;
-}
-
 .page-shell {
   width: 100%;
   min-height: 100vh;
@@ -37,7 +16,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   border-bottom: 1px solid #d5e1ea;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.main-nav a {
+  color: #5c7183;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #287b85;
+}
+
+.main-nav a.active {
+  font-weight: 700;
 }
 
 .logo,
@@ -64,11 +66,65 @@
   max-width: 1100px;
   flex: 1;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 410px);
   align-items: center;
-  gap: 10%;
+  gap: 8%;
   margin: 0 auto;
   padding: 70px 0;
+}
+
+.home-portrait {
+  width: 100%;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  border: 7px solid #ffffff;
+  border-radius: 8px 8px 68px 8px;
+  box-shadow: 0 12px 32px rgba(45, 75, 105, 0.18);
+}
+
+.home-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.route-page {
+  width: 86%;
+  max-width: 900px;
+  flex: 1;
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.route-page h1 {
+  max-width: 760px;
+}
+
+.route-page p {
+  max-width: 620px;
+  line-height: 1.8;
+}
+
+.about-page {
+  max-width: 1100px;
+}
+
+.about-intro {
+  margin-bottom: 34px;
+}
+
+.contact-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.contact-list a {
+  width: fit-content;
+  color: #287b85;
 }
 
 .profile-photo {
@@ -147,7 +203,6 @@ h1 {
 .section-heading h2 {
   margin: 8px 0 22px;
   font-size: 30px;
-  color: #20364a;
   color: #5c7183;
 }
 
@@ -173,8 +228,20 @@ h1 {
     display: none;
   }
 
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .main-nav {
+    gap: 16px;
+  }
+
+  .route-page {
+    padding: 55px 0;
+  }
+
   .profile-page {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 38px;
     padding: 55px 0;
   }
@@ -189,6 +256,11 @@ h1 {
 
   .intro-line {
     margin: 24px auto 14px;
+  }
+
+  .home-portrait {
+    width: min(100%, 340px);
+    justify-self: center;
   }
 
   .details-section {
